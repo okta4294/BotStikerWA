@@ -1,18 +1,17 @@
 const MENU = 
-`*🌟 BOT STIKER & DOWNLOADER 🌟*
+`* BOT STIKER & DOWNLOADER*
+* FITUR UTAMA:*
 
-*🛠️ FITUR UTAMA:*
-
-*1. 🖼️ Pembuat Stiker* (/sticker / /stiker)
+*1. Pembuat Stiker* (/sticker / /stiker)
    - *Kirim/Reply:* Gambar, Video, atau GIF -> Jadi Stiker.
    - *Link:* Kirim link sosmed -> Otomatis jadi stiker.
 
-*2. 📥 Media Downloader* (/download / /dl)
-   - *Instagram:* Post & Reels 🟣
-   - *X / Twitter:* Video & Foto 🐦
-   - *TikTok:* Video (Tanpa Watermark) 🎵
-   - *YouTube:* Video MP4 ▶️
-   - *Threads:* Foto & Video 🧵
+*2. Media Downloader* (/download / /dl)
+   - *Instagram:* Post & Reels
+   - *X / Twitter:* Video & Foto
+   - *TikTok:* Video (Tanpa Watermark)
+   - *YouTube:* Video MP4
+   - *Threads:* Foto & Video
 
 *💡 CARA PAKAI:*
    - Ketik /sticker [link/media] untuk stiker.
@@ -21,7 +20,7 @@ const MENU =
 
 *ℹ️ Bantuan:* Ketik /menu atau /help untuk melihat pesan ini.
 
-*Created by: Gue* ✨`;
+*Created by: Gue*`;
 
 const NO_MEDIA_OR_URL = 'Kirim gambar/video/URL matane ki lo, /menu ben paham';
 const PROCESSING_URL = '⏳ Sedang mencoba mendownload dan memproses URL. Mohon tunggu sebentar...';
@@ -38,7 +37,7 @@ const THREADS_FORMAT_UNKNOWN = 'Format media Threads tidak dikenali.';
 const TWITTER_ALL_FAILED = (error) => `Semua metode Twitter gagal: ${error}`;
 const TIKTOK_API_FAILED = 'Gagal mengambil info video TikTok dari API.';
 
-const COPY_PASTE_REPLY = 'Falah akbar kontol';
+const COPY_PASTE_REPLY = 'Udah ngapa bang, ga muak kah?';
 const BOT_READY = 'Bot sudah siap dan berjalan!';
 const BOT_DISCONNECTED = (reason) => `Bot terputus (disconnected) dari WhatsApp! Alasan: ${reason}`;
 const BOT_RESTARTING = 'Bot akan dimatikan agar bisa di-restart ulang...';

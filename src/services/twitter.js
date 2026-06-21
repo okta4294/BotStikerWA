@@ -1,16 +1,18 @@
 const axios = require('axios');
-const { createMediaAxiosConfig } = require('../utils/axios');
+const { httpsAgent } = require('../utils/axios');
 const { processMediaUrl, isMaxContentLengthError } = require('../utils/media');
 const { extractTweetId, cleanUrl } = require('../utils/url');
 const { TWITTER_NO_MEDIA, TWITTER_ALL_FAILED, MEDIA_TOO_LARGE, DOWNLOAD_FAILED } = require('../constants/messages');
 
-const { httpsAgent } = require('../utils/axios');
-
-const axiosConfig = createMediaAxiosConfig();
+const apiConfig = {
+  httpsAgent,
+  headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/115.0.0.0 Safari/537.36' },
+  timeout: 15000,
+};
 
 async function fetchFromVxTwitter(tweetId) {
   const apiUrl = `https://api.vxtwitter.com/i/status/${tweetId}`;
-  const response = await axios.get(apiUrl, axiosConfig);
+  const response = await axios.get(apiUrl, apiConfig);
   if (response.data && response.data.mediaURLs && response.data.mediaURLs.length > 0) {
     return response.data.mediaURLs;
   }
@@ -19,7 +21,7 @@ async function fetchFromVxTwitter(tweetId) {
 
 async function fetchFromFxTwitter(tweetId) {
   const apiUrl = `https://api.fxtwitter.com/i/status/${tweetId}`;
-  const response = await axios.get(apiUrl, axiosConfig);
+  const response = await axios.get(apiUrl, apiConfig);
   if (response.data && response.data.tweet && response.data.tweet.media && response.data.tweet.media.all) {
     return response.data.tweet.media.all.map(m => m.url);
   }

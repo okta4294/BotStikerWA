@@ -1,9 +1,6 @@
 const { ttdl } = require('btch-downloader');
 const { processMediaUrl, isMaxContentLengthError } = require('../utils/media');
 const { TIKTOK_API_FAILED, TIKTOK_NO_VIDEO, MEDIA_TOO_LARGE, DOWNLOAD_FAILED } = require('../constants/messages');
-const { createMediaAxiosConfig } = require('../utils/axios');
-
-const axiosConfig = createMediaAxiosConfig();
 
 function extractVideoUrl(ttRes) {
   if (!ttRes.video || ttRes.video.length === 0) {
